@@ -132,6 +132,13 @@ when "centos", "redhat"
     action :nothing
   end
 
+  template "/etc/sysconfig/jenkins" do
+    source "jenkins.erb"
+    mode 0640
+    owner "root"
+    group "root"
+  end
+
 end
 
 #"jenkins stop" may (likely) exit before the process is actually dead
